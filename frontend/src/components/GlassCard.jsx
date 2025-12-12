@@ -1,34 +1,26 @@
-// src/components/GlassCard.jsx
 import React from "react";
+import logo from "../assets/logo.png"; // <-- your logo
 
-export default function GlassCard({ title, children, style }) {
+function GlassCard({ children }) {
   return (
-    <div
-      style={{
-        background: "rgba(255, 255, 255, 0.15)",
-        padding: "20px",
-        borderRadius: "12px",
-        backdropFilter: "blur(10px)",
-        border: "1px solid rgba(255, 255, 255, 0.2)",
-        marginBottom: "20px",
-        ...style,
-      }}
-    >
-      {title ? <h2 style={{ marginTop: 0 }}>{title}</h2> : null}
-      {children}
+    <div className="min-h-screen w-full bg-gray-100 flex flex-col items-center">
+      
+      {/* Logo at top */}
+      <div className="w-full flex justify-center mt-6 mb-4">
+        <img
+          src={logo}
+          alt="Logo"
+          className="h-16 object-contain drop-shadow-lg"
+        />
+      </div>
+
+      {/* Glass Effect Card */}
+      <div className="backdrop-blur-xl bg-white/40 shadow-xl rounded-2xl p-8 w-[90%] max-w-3xl border border-white/30">
+        {children}
+      </div>
     </div>
-  );
-}
-import logo from "../assets/logo.png";   // <-- IMPORTANT: correct path
-
-function GlassCard() {
-  return (
-    <img 
-      src={logo} 
-      alt="Logo" 
-      className="h-16 w-auto"   // optional styling
-    />
   );
 }
 
 export default GlassCard;
+

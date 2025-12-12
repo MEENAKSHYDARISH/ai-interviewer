@@ -1,0 +1,12 @@
+.intervugo-logo { display:inline-block; line-height:0; user-select:none; -webkit-tap-highlight-color: transparent; }
+.intervugo-logo svg { display:block; }
+
+.intervugo-logo.animated { transition: transform 220ms ease, filter 220ms ease; transform-origin: center; }
+.intervugo-logo.animated:hover { transform: translateY(-6px) scale(1.02); filter: drop-shadow(0 18px 28px rgba(11,18,32,0.28)); }
+
+/* size variants */
+.intervugo-logo.icon { width: 56px; height: 56px; }
+.intervugo-logo.full { width: 260px; height: 80px; }
+
+/* small responsive tweak */
+@media (max-width: 600px) { .intervugo-logo.full { width: 200px; height: 64px; } }

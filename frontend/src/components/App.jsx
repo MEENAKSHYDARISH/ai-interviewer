@@ -1,10 +1,11 @@
-import IntervuGoLogo from "./components/IntervuGoLogo";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div>
-      <IntervuGoLogo size={64} variant="full" animated />
-    </div>
+    <>
+      <Navbar />
+      {/* Your existing code here */}
+    </>
   );
 }
 

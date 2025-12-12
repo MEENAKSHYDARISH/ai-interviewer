@@ -36,3 +36,4 @@ async def finish(session_id: str, background: BackgroundTasks = None):
     from ml_worker import processor
     background.add_task(processor.process_session, session_id, sess['chunks'])
     return {'status':'processing'}
+

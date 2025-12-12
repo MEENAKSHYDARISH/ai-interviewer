@@ -1,14 +1,9 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "main.js",
-  "type": "module",
+  "main": "main.py",
   "scripts": {
-    "start": "node main.js"
+    "start": "python main.py"
   },
-  "dependencies": {
-    "express": "^4.19.2",
-    "cors": "^2.8.5",
-    "axios": "^1.6.8"
-  }
+  "dependencies": {}
 }

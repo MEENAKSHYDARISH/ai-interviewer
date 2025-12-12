@@ -19,3 +19,16 @@ export default function GlassCard({ title, children, style }) {
     </div>
   );
 }
+import logo from "../assets/logo.png";   // <-- IMPORTANT: correct path
+
+function GlassCard() {
+  return (
+    <img 
+      src={logo} 
+      alt="Logo" 
+      className="h-16 w-auto"   // optional styling
+    />
+  );
+}
+
+export default GlassCard;

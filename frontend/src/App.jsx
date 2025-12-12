@@ -2,25 +2,24 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import VideoInterviewer from "./interview/VideoInterviewer";
 import ReportView from "./interview/ReportView";
 import AvatarInterviewer from "./interview/AvatarInterviewer";
+import Header from "./components/Header";
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
 
-        {/* Home page */}
-        <Route path="/" element={<VideoInterviewer />} />
+      {/* ⭐ Add Header here so it appears on all pages */}
+      <Header />
 
-        {/* Interview session */}
-        <Route path="/interview" element={<VideoInterviewer />} />
+      <div style={{ marginTop: "80px" }}>
+        <Routes>
+          <Route path="/" element={<VideoInterviewer />} />
+          <Route path="/interview" element={<VideoInterviewer />} />
+          <Route path="/report/:sessionId" element={<ReportView />} />
+          <Route path="/avatar" element={<AvatarInterviewer />} />
+        </Routes>
+      </div>
 
-        {/* Report page */}
-        <Route path="/report/:sessionId" element={<ReportView />} />
-
-        {/* Avatar test page */}
-        <Route path="/avatar" element={<AvatarInterviewer />} />
-
-      </Routes>
     </BrowserRouter>
   );
 }

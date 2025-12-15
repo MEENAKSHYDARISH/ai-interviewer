@@ -1,0 +1,35 @@
+@keyframes glowPulse {
+  0% { filter: drop-shadow(0 0 2px #00eaff); }
+  50% { filter: drop-shadow(0 0 12px #00eaff); }
+  100% { filter: drop-shadow(0 0 2px #00eaff); }
+}
+
+.neon-button {
+  background: transparent;
+  border: 2px solid #00eaff;
+  color: white;
+  padding: 14px 35px;
+  border-radius: 10px;
+  font-size: 19px;
+  cursor: pointer;
+  transition: 0.3s;
+  animation: glowPulse 2s infinite;
+}
+
+.neon-button:hover {
+  background: #00eaff33;
+  box-shadow: 0 0 15px #00eaff;
+}
+
+.logo-glow {
+  width: 140px;
+  animation: glowPulse 3s infinite;
+}
+
+.neon-card {
+  border: 2px solid #7a00ff;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #7a00ff;
+  animation: glowPulse 2.5s infinite;
+}

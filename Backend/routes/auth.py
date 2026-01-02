@@ -40,3 +40,4 @@ def me(authorization: str = None):
         raise HTTPException(status_code=401, detail='Invalid token')
 
     return {"username": user['username'], "role": user['role']}
+

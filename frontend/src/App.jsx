@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import VideoInterviewer from "./interview/VideoInterviewer";
 import ReportView from "./interview/ReportView";
 import AvatarInterviewer from "./interview/AvatarInterviewer";
-import Header from "./components/Header";
 import StudentRoleSelect from "./pages/student/StudentRoleSelect";
 import HRRoleSetup from "./pages/hr/HRRoleSetup";
 import StudentRolePage from "./pages/StudentRolePage";

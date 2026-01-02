@@ -70,4 +70,15 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.neon-border {
+  box-shadow: 0 0 15px #00f2ff;
+}
+
+.neon-button {
+  box-shadow: 0 0 10px #00f2ff;
+}
+
+.neon-text {
+  text-shadow: 0 0 10px #00f2ff;
+}
 

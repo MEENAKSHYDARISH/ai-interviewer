@@ -1,0 +1,110 @@
+/* Page Layout */
+.landing-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #05010e;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Neon Background Bubbles */
+.glow-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(150px);
+  opacity: 0.6;
+  animation: float 8s infinite ease-in-out alternate;
+}
+
+.circle1 {
+  width: 600px;
+  height: 600px;
+  background: #4d00ff;
+  top: -150px;
+  left: -200px;
+}
+
+.circle2 {
+  width: 500px;
+  height: 500px;
+  background: #00c6ff;
+  bottom: -150px;
+  right: -200px;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-40px) scale(1.1); }
+}
+
+/* Glass Card */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 420px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  animation: fadein 1.2s ease;
+}
+
+@keyframes fadein {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Logo */
+.landing-logo {
+  width: 120px;
+  filter: drop-shadow(0 0 20px #00c8ff);
+  margin-bottom: 20px;
+}
+
+/* Text */
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #b5b5b5;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+/* Neon Buttons */
+.neon-btn {
+  width: 100%;
+  margin: 10px 0;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #fff;
+  background: transparent;
+  border: 2px solid #00d9ff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  text-shadow: 0 0 8px #00d9ff;
+  box-shadow: 0 0 10px #00d9ff inset;
+}
+
+.neon-btn:hover {
+  background: #00d9ff;
+  color: #000;
+  box-shadow: 0 0 20px #00d9ff, 0 0 10px #00d9ff inset;
+  transform: scale(1.05);
+}
+
+/* Mobile Scaling */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.9rem;
+  }
+}

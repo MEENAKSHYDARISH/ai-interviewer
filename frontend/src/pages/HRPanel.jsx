@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NeonButton from "../components/neonbutton";
+import NeonButton from "../components/NeonButton";
 
 export default function HRPanel() {
   const [role, setRole] = useState("");

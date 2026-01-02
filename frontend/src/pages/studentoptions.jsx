@@ -1,4 +1,4 @@
-import NeonButton from "../components/neonbutton";
+import NeonButton from "../components/NeonButton";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

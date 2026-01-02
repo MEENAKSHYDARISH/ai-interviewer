@@ -1,5 +1,5 @@
 import "./home.css";
-import NeonButton from "../components/neonbutton";
+import NeonButton from "../components/NeonButton";
 import AnimatedLogo from "../components/AnimatedLogo";
 import { useNavigate } from "react-router-dom";
 

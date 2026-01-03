@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+/*import { BrowserRouter, Routes, Route } from "react-router-dom";
 import VideoInterviewer from "./interview/VideoInterviewer";
 import ReportView from "./interview/ReportView";
 import AvatarInterviewer from "./interview/AvatarInterviewer";
@@ -12,7 +12,6 @@ function App() {
   return (
     <BrowserRouter>
 
-      {/* ⭐ Add Header here so it appears on all pages */}
       <Header />
 
       <div style={{ marginTop: "80px" }}>
@@ -38,4 +37,12 @@ function App() {
   );
 }
 
-export default App;
+export default App; */
+export default function App() {
+  return (
+    <div style={{ color: "white", padding: "40px", fontSize: "32px" }}>
+      ✅ React is rendering
+    </div>
+  );
+}
+

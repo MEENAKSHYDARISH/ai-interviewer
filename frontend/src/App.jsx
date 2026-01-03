@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // layout
-import Header from "./components/Header";
+//import Header from "./components/Header";
 
 // interview
 import VideoInterviewer from "./interview/VideoInterviewer";
@@ -22,7 +22,7 @@ import HRDashboard from "./pages/hr/HRDashboard";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      {/* <Header />*/}
 
       <div style={{ marginTop: "80px" }}>
         <Routes>

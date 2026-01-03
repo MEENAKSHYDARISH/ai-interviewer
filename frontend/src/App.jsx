@@ -16,7 +16,7 @@ import StudentReport from "./pages/student/StudentReport";
 
 // hr
 import HRRoleSetup from "./pages/hr/HRRoleSetup";
-import HrRolePage from "./pages/hr/HrRolePage";
+import HrRolePage from "./pages/HrRolePage";
 import HRDashboard from "./pages/hr/HRDashboard";
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
 
           {/* hr */}
           <Route path="/hr/setup" element={<HRRoleSetup />} />
-          <Route path="/hr/hr-role" element={<HrRolePage />} />
+          <Route path="/hr-role" element={<HrRolePage />} />
           <Route path="/hr/dashboard" element={<HRDashboard />} />
         </Routes>
       </div>

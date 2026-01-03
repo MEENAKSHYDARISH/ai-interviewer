@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import api from "../api";
+import api from "../api/api";
 import GlassCard from "../components/GlassCard";
 
 export default function ReportView() {

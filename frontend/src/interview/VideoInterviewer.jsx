@@ -1,6 +1,6 @@
 // src/interview/VideoInterviewer.jsx
 import React, { useEffect, useRef, useState } from "react";
-import api from "../api";
+import api from "../api/api";
 
 export default function VideoInterviewer() {
   const videoRef = useRef(null);

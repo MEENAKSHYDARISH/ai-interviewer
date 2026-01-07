@@ -1,62 +1,91 @@
-// src/interview/VideoInterviewer.jsx
-import React, { useEffect, useRef, useState } from "react";
-import api from "../api/api";
+import { useEffect, useRef, useState } from "react";
 
 export default function VideoInterviewer() {
   const videoRef = useRef(null);
-  const [status, setStatus] = useState("idle");
+  const [status, setStatus] = useState("Idle");
 
   useEffect(() => {
-    async function startCamera() {
+    const startCamera = async () => {
       try {
         const stream = await navigator.mediaDevices.getUserMedia({
           video: true,
           audio: true,
         });
+
         if (videoRef.current) {
           videoRef.current.srcObject = stream;
-          videoRef.current.play();
         }
-      } catch (err) {
-        console.error("Camera error", err);
+      } catch (error) {
+        console.error("Camera access denied:", error);
       }
-    }
+    };
+
     startCamera();
+
+    // cleanup on unmount
+    return () => {
+      if (videoRef.current?.srcObject) {
+        videoRef.current.srcObject.getTracks().forEach(track => track.stop());
+      }
+    };
   }, []);
 
   return (
-    <div className="page-container">
-      <h1 className="page-title">Virtual AI Interviewer</h1>
+    <div style={{ padding: "24px", color: "#fff" }}>
+      <h1 style={{ fontSize: "28px", marginBottom: "16px" }}>
+        Virtual AI Interviewer
+      </h1>
 
-      <div className="video-box">
+      {/* Camera */}
+      <div
+        style={{
+          width: "640px",
+          height: "360px",
+          background: "#000",
+          borderRadius: "12px",
+          overflow: "hidden",
+          marginBottom: "20px",
+        }}
+      >
         <video
           ref={videoRef}
+          autoPlay
+          muted
+          playsInline
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
-        ></video>
-      </div>
-
-      <div className="glass-card">
-        <h2 style={{ marginBottom: "12px" }}>Live Metrics</h2>
-        <p>No metrics yet. They will appear once the interview starts.</p>
-      </div>
-
-      <div className="glass-card">
-        <input
-          type="text"
-          className="input-box"
-          placeholder="Enter a question for the AI avatar..."
         />
-        <button className="btn btn-primary">Generate Avatar Question</button>
       </div>
 
-      <div style={{ marginTop: "20px" }}>
-        <button className="btn btn-primary">Start Interview</button>
-        <button className="btn btn-success">Finish Interview</button>
+      {/* Status */}
+      <p style={{ marginBottom: "16px" }}>
+        <strong>Status:</strong> {status}
+      </p>
 
-        <span style={{ marginLeft: "20px", opacity: 0.7 }}>
-          Status: {status}
-        </span>
+      {/* Controls */}
+      <div style={{ display: "flex", gap: "12px" }}>
+        <button
+          onClick={() => setStatus("Interview Started")}
+          style={buttonStyle}
+        >
+          Start Interview
+        </button>
+
+        <button
+          onClick={() => setStatus("Interview Finished")}
+          style={{ ...buttonStyle, background: "#16a34a" }}
+        >
+          Finish Interview
+        </button>
       </div>
     </div>
   );
 }
+
+const buttonStyle = {
+  padding: "10px 16px",
+  background: "#2563eb",
+  border: "none",
+  borderRadius: "8px",
+  color: "#fff",
+  cursor: "pointer",
+};

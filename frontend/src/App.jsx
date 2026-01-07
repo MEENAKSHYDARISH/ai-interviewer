@@ -22,7 +22,7 @@ import HRDashboard from "./pages/hr/HRDashboard";
 function App() {
   return (
     <BrowserRouter>
-      {/* <Header />*/}
+      {/* <Header />*/}                 
 
       <div style={{ marginTop: "80px" }}>
         <Routes>

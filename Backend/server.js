@@ -14,10 +14,7 @@ app.get("/", (req, res) => {
 // Sample interview route
 app.get("/api/interview/questions", (req, res) => {
   res.json({
-    role: "Frontend Developer",
-    type: "Technical",
     questions: [
-      "Explain React hooks",
       "What is virtual DOM?",
       "Difference between var, let, const?"
     ]

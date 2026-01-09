@@ -9,7 +9,7 @@ export default function StudentReport() {
   useEffect(() => {
     axios.get("http://localhost:5000/api/report/" + id)
       .then(res => setReport(res.data));
-  }, []);
+  }, [id]);
 
   if (!report) return <p>Loading...</p>;
 
@@ -33,7 +33,4 @@ export default function StudentReport() {
     </div>
   );
 }
-useEffect(() => {
-  axios.get("http://localhost:5000/api/report/" + id)
-    .then(res => setReport(res.data));
-}, [id]);
+

@@ -18,6 +18,7 @@ import StudentReport from "./pages/student/StudentReport";
 import HRRoleSetup from "./pages/hr/HRRoleSetup";
 import HrRolePage from "./pages/HrRolePage";
 import HRDashboard from "./pages/hr/HRDashboard";
+import Landing from "./pages/Landing";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Routes>
           {/* default */}
           <Route path="/" element={<VideoInterviewer />} />
+          <Route path="/home" element={<Landing/>}/>
 
           {/* interview */}
           <Route path="/interview" element={<VideoInterviewer />} />

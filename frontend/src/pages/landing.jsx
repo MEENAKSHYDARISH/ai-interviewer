@@ -20,11 +20,11 @@ export default function Landing() {
         <p className="subtitle">AI‑Powered Virtual Interview Platform</p>
 
         <div className="button-group">
-          <button className="neon-btn" onClick={() => navigate("/student/login")}>
+          <button className="neon-btn" onClick={() => navigate("/student/select")}>
             🚀 Student Login
           </button>
 
-          <button className="neon-btn" onClick={() => navigate("/hr/login")}>
+          <button className="neon-btn" onClick={() => navigate("/hr/setup")}>
             🧑‍💼 HR Login
           </button>
         </div>

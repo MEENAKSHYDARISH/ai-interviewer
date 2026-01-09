@@ -28,8 +28,8 @@ function App() {
       <div style={{ marginTop: "80px" }}>
         <Routes>
           {/* default */}
-          <Route path="/" element={<VideoInterviewer />} />
           <Route path="/home" element={<Landing/>}/>
+          <Route path="/" element={<VideoInterviewer />} />
 
           {/* interview */}
           <Route path="/interview" element={<VideoInterviewer />} />

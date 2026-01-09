@@ -1,8 +1,16 @@
-/* Fade-in animation */
+/* ===== Global Reset (safe) ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== Fade In Animation ===== */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(25px);
   }
   to {
     opacity: 1;
@@ -11,10 +19,10 @@
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.6s ease-out;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Neon heading text */
+/* ===== Neon Text ===== */
 .neonText {
   text-shadow:
     0 0 5px #22d3ee,
@@ -22,35 +30,51 @@
     0 0 20px #22d3ee;
 }
 
-/* Neon border glow */
+/* ===== Neon Border ===== */
 .neonBorder {
-  box-shadow:
-    0 0 5px rgba(34, 211, 238, 0.6),
-    0 0 12px rgba(34, 211, 238, 0.6);
-  outline: none;
+  transition: all 0.3s ease;
 }
 
-/* Button neon effect */
-.neonButton {
+.neonBorder:focus {
+  outline: none;
   box-shadow:
-    0 0 10px rgba(34, 211, 238, 0.8),
-    0 0 20px rgba(34, 211, 238, 0.8);
+    0 0 10px #22d3ee,
+    0 0 20px #22d3ee;
+}
+
+/* ===== Neon Button ===== */
+.neonButton {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow:
+    0 0 10px rgba(34, 211, 238, 0.7),
+    0 0 20px rgba(34, 211, 238, 0.5);
 }
 
 .neonButton:hover {
   box-shadow:
     0 0 20px rgba(34, 211, 238, 1),
-    0 0 40px rgba(34, 211, 238, 1);
-  transform: scale(1.02);
+    0 0 40px rgba(34, 211, 238, 0.8);
+  transform: translateY(-2px);
 }
 
-/* Select dropdown fix */
+/* ===== Select Styling ===== */
 select {
   appearance: none;
-  cursor: pointer;
+  background-image:
+    linear-gradient(45deg, transparent 50%, cyan 50%),
+    linear-gradient(135deg, cyan 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
 }
 
-/* Prevent white background issue */
-body {
-  background-color: #000;
+/* ===== Container Glow ===== */
+.glow-card {
+  box-shadow:
+    0 0 20px rgba(34, 211, 238, 0.6),
+    0 0 40px rgba(34, 211, 238, 0.4);
+  border-radius: 16px;
 }

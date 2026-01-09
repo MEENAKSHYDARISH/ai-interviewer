@@ -14,14 +14,14 @@ export default function Landing() {
 
         <button
           className="landing-btn"
-          onClick={() => navigate("/student/login")}
+          onClick={() => navigate("/student/select")}
         >
           🚀 Student Login
         </button>
 
         <button
           className="landing-btn secondary"
-          onClick={() => navigate("/hr/login")}
+          onClick={() => navigate("/hr/setup")}
         >
           👩‍💼 HR Login
         </button>

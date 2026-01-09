@@ -1,85 +1,100 @@
-/* Reset browser defaults */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html,
-body,
-#root {
-  width: 100%;
-  height: 100%;
-  font-family: "Segoe UI", sans-serif;
-}
-
-/* Fullscreen background */
-.landing-container {
+/* FULL SCREEN BACKGROUND */
+.landing-wrapper {
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, #1a0033, #000814);
+  background: radial-gradient(circle at top, #2b0057, #050012 70%);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-/* Glass / neon card */
-.landing-card {
-  width: 90%;
-  max-width: 420px;
-  padding: 40px 30px;
-  background: rgba(255, 255, 255, 0.06);
+/* NEON CARD */
+.neon-card {
+  position: relative;
+  width: 420px;
+  padding: 40px;
   border-radius: 20px;
+  background: rgba(10, 10, 20, 0.85);
   text-align: center;
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(0, 255, 255, 0.4);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+  z-index: 1;
 }
 
-/* Title */
-.landing-title {
-  font-size: 42px;
+/* NEON BORDER EFFECT (THIS WAS MISSING) */
+.neon-card::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 22px;
+  background: linear-gradient(
+    120deg,
+    #7f00ff,
+    #00f2ff,
+    #7f00ff
+  );
+  filter: blur(15px);
+  z-index: -1;
+  opacity: 0.9;
+}
+
+/* TITLE */
+.title {
+  font-size: 3rem;
+  font-weight: bold;
   color: #ffffff;
+  text-shadow:
+    0 0 8px #00f2ff,
+    0 0 20px #7f00ff;
   margin-bottom: 10px;
-  text-shadow: 0 0 12px cyan;
 }
 
-/* Subtitle */
-.landing-subtitle {
-  font-size: 16px;
-  color: #cbd5e1;
+/* SUBTITLE */
+.subtitle {
+  color: #cfcfcf;
   margin-bottom: 30px;
+  font-size: 1.1rem;
 }
 
-/* Buttons */
-.landing-btn {
+/* BUTTON BASE */
+.neon-btn {
   width: 100%;
   padding: 14px;
-  margin-bottom: 15px;
+  margin-top: 15px;
+  font-size: 1.05rem;
   border-radius: 12px;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
   cursor: pointer;
-  background: linear-gradient(90deg, cyan, #00ffd5);
+  border: none;
+  transition: 0.3s ease;
+}
+
+/* STUDENT BUTTON */
+.neon-btn.primary {
+  background: #00f2ff;
   color: #000;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 15px cyan;
+  box-shadow:
+    0 0 10px #00f2ff,
+    0 0 25px #00f2ff;
 }
 
-.landing-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 25px cyan;
+.neon-btn.primary:hover {
+  box-shadow:
+    0 0 20px #00f2ff,
+    0 0 40px #00f2ff;
 }
 
-.landing-btn.secondary {
+/* HR BUTTON */
+.neon-btn.secondary {
   background: transparent;
-  color: cyan;
-  border: 2px solid cyan;
-  box-shadow: 0 0 12px cyan;
+  color: #ffffff;
+  border: 2px solid #7f00ff;
+  box-shadow:
+    0 0 10px #7f00ff,
+    0 0 25px #7f00ff;
 }
 
-.landing-btn.secondary:hover {
-  background: cyan;
-  color: black;
+.neon-btn.secondary:hover {
+  background: #7f00ff;
+  box-shadow:
+    0 0 20px #7f00ff,
+    0 0 40px #7f00ff;
 }

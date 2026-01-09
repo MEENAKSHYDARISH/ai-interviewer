@@ -1,100 +1,85 @@
-/* FULL SCREEN BACKGROUND */
-.landing-wrapper {
+/* Reset browser defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Fullscreen background */
+.landing-container {
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(circle at top, #2b0057, #050012 70%);
+  background: linear-gradient(135deg, #1a0033, #000814);
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
-/* NEON CARD */
-.neon-card {
-  position: relative;
-  width: 420px;
-  padding: 40px;
+/* Glass / neon card */
+.landing-card {
+  width: 90%;
+  max-width: 420px;
+  padding: 40px 30px;
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 20px;
-  background: rgba(10, 10, 20, 0.85);
   text-align: center;
-  z-index: 1;
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
 }
 
-/* NEON BORDER EFFECT (THIS WAS MISSING) */
-.neon-card::before {
-  content: "";
-  position: absolute;
-  inset: -3px;
-  border-radius: 22px;
-  background: linear-gradient(
-    120deg,
-    #7f00ff,
-    #00f2ff,
-    #7f00ff
-  );
-  filter: blur(15px);
-  z-index: -1;
-  opacity: 0.9;
-}
-
-/* TITLE */
-.title {
-  font-size: 3rem;
-  font-weight: bold;
+/* Title */
+.landing-title {
+  font-size: 42px;
   color: #ffffff;
-  text-shadow:
-    0 0 8px #00f2ff,
-    0 0 20px #7f00ff;
   margin-bottom: 10px;
+  text-shadow: 0 0 12px cyan;
 }
 
-/* SUBTITLE */
-.subtitle {
-  color: #cfcfcf;
+/* Subtitle */
+.landing-subtitle {
+  font-size: 16px;
+  color: #cbd5e1;
   margin-bottom: 30px;
-  font-size: 1.1rem;
 }
 
-/* BUTTON BASE */
-.neon-btn {
+/* Buttons */
+.landing-btn {
   width: 100%;
   padding: 14px;
-  margin-top: 15px;
-  font-size: 1.05rem;
+  margin-bottom: 15px;
   border-radius: 12px;
-  cursor: pointer;
   border: none;
-  transition: 0.3s ease;
-}
-
-/* STUDENT BUTTON */
-.neon-btn.primary {
-  background: #00f2ff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(90deg, cyan, #00ffd5);
   color: #000;
-  box-shadow:
-    0 0 10px #00f2ff,
-    0 0 25px #00f2ff;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px cyan;
 }
 
-.neon-btn.primary:hover {
-  box-shadow:
-    0 0 20px #00f2ff,
-    0 0 40px #00f2ff;
+.landing-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px cyan;
 }
 
-/* HR BUTTON */
-.neon-btn.secondary {
+.landing-btn.secondary {
   background: transparent;
-  color: #ffffff;
-  border: 2px solid #7f00ff;
-  box-shadow:
-    0 0 10px #7f00ff,
-    0 0 25px #7f00ff;
+  color: cyan;
+  border: 2px solid cyan;
+  box-shadow: 0 0 12px cyan;
 }
 
-.neon-btn.secondary:hover {
-  background: #7f00ff;
-  box-shadow:
-    0 0 20px #7f00ff,
-    0 0 40px #7f00ff;
+.landing-btn.secondary:hover {
+  background: cyan;
+  color: black;
 }

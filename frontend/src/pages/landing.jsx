@@ -1,27 +1,29 @@
-import { useNavigate } from "react-router-dom";
 import "./landing.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Landing() {
   const navigate = useNavigate();
 
   return (
-    <div className="landing-wrapper">
-      <div className="neon-card">
-        <h1 className="title">IntervuGo</h1>
-        <p className="subtitle">AI‑Powered Virtual Interview Platform</p>
+    <div className="landing-container">
+      <div className="landing-card">
+        <h1 className="landing-title">IntervuGo</h1>
+        <p className="landing-subtitle">
+          AI‑Powered Virtual Interview Platform
+        </p>
 
         <button
-          className="neon-btn primary"
-          onClick={() => navigate("/student/select")}
+          className="landing-btn"
+          onClick={() => navigate("/student/login")}
         >
           🚀 Student Login
         </button>
 
         <button
-          className="neon-btn secondary"
-          onClick={() => navigate("/hr/setup")}
+          className="landing-btn secondary"
+          onClick={() => navigate("/hr/login")}
         >
-          🧑‍💼 HR Login
+          👩‍💼 HR Login
         </button>
       </div>
     </div>

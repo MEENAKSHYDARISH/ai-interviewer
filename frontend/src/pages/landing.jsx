@@ -21,7 +21,7 @@ export default function Landing() {
 
         <button
           className="landing-btn secondary"
-          onClick={() => navigate("/hr/setup")}
+          onClick={() => navigate("/hr/setupg")}
         >
           👩‍💼 HR Login
         </button>

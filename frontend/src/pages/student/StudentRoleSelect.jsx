@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./studentRoleSelect.css";
+
 
 export default function StudentRoleSelect() {
   const navigate = useNavigate();

@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./studentRoleSelect.css";
-
+import "./StudentRoleSelect.css";
 
 export default function StudentRoleSelect() {
   const navigate = useNavigate();
 
+  const [role, setRole] = useState("");
+  const [type, setType] = useState("");
+  const [customRole, setCustomRole] = useState("");
   const [roles, setRoles] = useState([
     "Frontend Developer",
     "Backend Developer",
@@ -13,76 +15,67 @@ export default function StudentRoleSelect() {
     "Data Analyst",
     "AI Engineer",
     "UI/UX Designer",
+    "Cloud Engineer",
+    "Cybersecurity Analyst",
     "DevOps Engineer",
+    "Software Tester",
+    "Mobile App Developer",
   ]);
 
-  const [newRole, setNewRole] = useState("");
-  const [selectedRole, setSelectedRole] = useState("");
-  const [type, setType] = useState("");
-
-  const addRole = () => {
-    if (!newRole.trim()) return;
-
-    if (!roles.includes(newRole)) {
-      setRoles([...roles, newRole]);
-    }
-    setNewRole("");
+  const addCustomRole = () => {
+    if (!customRole.trim()) return;
+    setRoles([...roles, customRole.trim()]);
+    setRole(customRole.trim());
+    setCustomRole("");
   };
 
   const handleStart = () => {
-    if (!selectedRole || !type) {
-      alert("Please select role and interview type!");
-      return;
-    }
-
-    navigate(`/interview?role=${selectedRole}&type=${type}`);
+    if (!role || !type) return alert("Please select all fields!");
+    navigate(`/interview?role=${role}&type=${type}`);
   };
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center p-4">
-      <div className="bg-[#0d0d0d]/70 border border-cyan-500/50 rounded-xl p-8 w-full max-w-lg
-                      backdrop-blur-xl shadow-[0_0_20px_cyan]">
+    <div className="studentRolePage">
+      <div className="neonCardBox">
+        <h1 className="neonTitle">Student – Interview Setup</h1>
+        <p className="neonSubText">
+          Choose your role and interview type to start your AI mock interview!
+        </p>
 
-        <h1 className="text-3xl font-bold text-cyan-400 text-center mb-6">
-          Student – Interview Setup
-        </h1>
+        {/* Role */}
+        <label className="neonLabel">Select Your Role</label>
 
-        {/* Role Select */}
-        <label className="text-white mb-1 block">Select Your Role</label>
         <select
-          className="w-full p-3 bg-black/70 border border-cyan-400 rounded-lg text-white"
-          value={selectedRole}
-          onChange={(e) => setSelectedRole(e.target.value)}
+          className="neonSelect"
+          value={role}
+          onChange={(e) => setRole(e.target.value)}
         >
           <option value="">-- Choose a Role --</option>
-          {roles.map((role, index) => (
-            <option key={index} value={role}>
-              {role}
+          {roles.map((r, idx) => (
+            <option key={idx} value={r}>
+              {r}
             </option>
           ))}
         </select>
 
-        {/* Add Custom Role */}
-        <div className="flex gap-2 mt-3">
+        {/* Custom Role */}
+        <div className="customRoleRow">
           <input
-            type="text"
+            className="neonInput"
+            value={customRole}
+            onChange={(e) => setCustomRole(e.target.value)}
             placeholder="Add custom role..."
-            value={newRole}
-            onChange={(e) => setNewRole(e.target.value)}
-            className="flex-1 p-3 bg-black/70 border border-cyan-400 rounded-lg text-white"
           />
-          <button
-            onClick={addRole}
-            className="px-4 bg-cyan-500 text-black font-bold rounded-lg hover:shadow-[0_0_15px_cyan]"
-          >
+          <button className="addRoleBtn" onClick={addCustomRole}>
             +
           </button>
         </div>
 
-        {/* Interview Type */}
-        <label className="text-white mt-4 mb-1 block">Interview Type</label>
+        {/* Type */}
+        <label className="neonLabel">Interview Type</label>
+
         <select
-          className="w-full p-3 bg-black/70 border border-cyan-400 rounded-lg text-white"
+          className="neonSelect"
           value={type}
           onChange={(e) => setType(e.target.value)}
         >
@@ -93,13 +86,8 @@ export default function StudentRoleSelect() {
           <option value="Mixed">Mixed</option>
         </select>
 
-        {/* Start Button */}
-        <button
-          onClick={handleStart}
-          className="mt-6 w-full p-3 bg-cyan-500 text-black font-bold rounded-lg
-                     hover:shadow-[0_0_25px_cyan] transition"
-        >
-          Start AI Interview 🚀
+        <button className="startBtn" onClick={handleStart}>
+          Start AI Interview!
         </button>
       </div>
     </div>

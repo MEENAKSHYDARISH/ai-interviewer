@@ -4,14 +4,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //import Header from "./components/Header";
 
 // interview
-import VideoInterviewer from "./interview/VideoInterviewer";
+import VideoInterviewer from "./interview/InterviewPage";
 import AvatarInterviewer from "./interview/AvatarInterviewer";
 import ReportView from "./interview/ReportView";
 
 // student
 import StudentRoleSelect from "./pages/student/StudentRoleSelect";
 import StudentRolePage from "./pages/StudentRolePage";
-import InterviewStartPage from "./pages/InterviewStartPage";
+import InterviewStartPage from "./interview/InterviewPage";
 import StudentReport from "./pages/student/StudentReport";
 
 // hr
